@@ -28,14 +28,14 @@ export const metadata: Metadata = {
     "Node.js",
     "Portfolio"
   ],
-  authors: [{ name: "Rupam Gupta", url: "https://rupamgupta.com" }],
+  authors: [{ name: "Rupam Gupta", url: "https://rupamgupta.vercel.app/" }],
   creator: "Rupam Gupta",
   publisher: "Rupam Gupta",
-  metadataBase: new URL("https://rupamgupta.com"),
+  metadataBase: new URL("https://rupamgupta.vercel.app/"),
   openGraph: {
     title: "Rupam Gupta | Full Stack Developer",
     description: "Professional portfolio of Rupam Gupta, showcasing full stack development projects and expertise in modern web technologies.",
-    url: "https://rupamgupta.com",
+    url: "https://rupamgupta.vercel.app/",
     siteName: "Rupam Gupta Portfolio",
     images: [
       {
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Rupam Gupta | Full Stack Developer",
     description: "Professional portfolio of Rupam Gupta, showcasing full stack development projects and expertise in modern web technologies.",
-    images: ["/og-image.jpg"],
+    images: ["/coding.png"],
     creator: "@rupamgupta",
   },
   robots: {
