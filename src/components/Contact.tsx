@@ -1,0 +1,225 @@
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { FiMail, FiPhone, FiMapPin, FiSend } from 'react-icons/fi';
+import { FaLinkedin, FaGithub, FaTwitter, FaEnvelope } from 'react-icons/fa';
+
+export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    // Simulate form submission
+    setTimeout(() => {
+      console.log('Form submitted:', formData);
+      setIsSubmitting(false);
+      setSubmitSuccess(true);
+      setFormData({ name: '', email: '', message: '' });
+
+      // Reset success message after 5 seconds
+      setTimeout(() => setSubmitSuccess(false), 5000);
+    }, 1500);
+  };
+
+  const contactMethods = [
+    {
+      icon: <FiMail className="text-2xl text-blue-500" />,
+      title: "Email Me",
+      info: "guptarupam.1020@gmail.com",
+      action: "mailto:guptarupam.1020@gmail.com"
+    },
+    {
+      icon: <FiPhone className="text-2xl text-blue-500" />,
+      title: "Call Me",
+      info: "+91 8460980143",
+      action: "tel:+918460980143"
+    },
+    {
+      icon: <FiMapPin className="text-2xl text-blue-500" />,
+      title: "Location",
+      info: "Lucknow, India",
+      action: "https://maps.google.com"
+    }
+  ];
+
+  const socialLinks = [
+    { icon: <FaLinkedin className="text-xl" />, href: "https://linkedin.com/in/mr-rupam-gupta" },
+    { icon: <FaGithub className="text-xl" />, href: "https://github.com/programmingyatra" },
+    { icon: <FaTwitter className="text-xl" />, href: "https://twitter.com/mrrupamgupta" },
+    { icon: <FaEnvelope className="text-xl" />, href: 'mailto:guptarupam@gmail.com' },
+
+  ];
+
+  return (
+    <section id="contact" className="py-20 bg-gray-50">
+      <div className="container mx-auto px-6">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl font-bold text-gray-800 mb-4">Get In Touch</h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Have a project in mind or want to discuss potential opportunities?
+            Feel free to reach out through any of these channels.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* Contact Information */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <div className="space-y-8">
+              {contactMethods.map((method, index) => (
+                <div key={index} className="flex items-start gap-6">
+                  <div className="flex-shrink-0 p-3 bg-white rounded-lg shadow-md">
+                    {method.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-800 mb-1">{method.title}</h3>
+                    <a
+                      href={method.action}
+                      className="text-gray-600 hover:text-blue-500 transition-colors"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {method.info}
+                    </a>
+                  </div>
+                </div>
+              ))}
+
+              {/* Social Links */}
+              <div className="pt-6">
+                <h4 className="text-lg font-medium text-gray-800 mb-4">Follow Me</h4>
+                <div className="flex gap-4">
+                  {socialLinks.map((social, index) => (
+                    <a
+                      key={index}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-3 bg-white rounded-lg shadow-md hover:bg-blue-50 transition-colors"
+                      aria-label={`${social.icon.type.displayName} profile`}
+                    >
+                      {social.icon}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Contact Form */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="bg-white p-8 rounded-xl shadow-lg"
+          >
+            <h3 className="text-2xl font-semibold text-gray-800 mb-6">Send a Message</h3>
+
+            {submitSuccess && (
+              <div className="mb-6 p-4 bg-green-50 text-green-700 rounded-lg">
+                Thank you! Your message has been sent successfully. I'll get back to you soon.
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit}>
+              <div className="space-y-6">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                    Your Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                    placeholder="John Doe"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                    placeholder="your@email.com"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                    Your Message
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={5}
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                    placeholder="Tell me about your project..."
+                  ></textarea>
+                </div>
+
+                <div>
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className={`w-full flex items-center justify-center px-6 py-3 rounded-lg text-white font-medium cursor-pointer ${isSubmitting ? 'bg-blue-400' : 'bg-blue-600 hover:bg-blue-700'
+                      } transition-colors`}
+                  >
+                    {isSubmitting ? (
+                      'Sending...'
+                    ) : (
+                      <>
+                        <FiSend className="mr-2" />
+                        Send Message
+                      </>
+                    )}
+                  </button>
+                </div>
+              </div>
+            </form>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
