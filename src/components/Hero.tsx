@@ -43,9 +43,9 @@ export default function Hero() {
     <section id='home' className="relative pt-22 bg-gradient-to-br from-gray-50 to-gray-100 w-full overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-0 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"></div>
-        <div className="absolute top-0 right-0 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-0 left-1/2 w-64 h-64 bg-emerald-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-4000"></div>
+        <div className="absolute top-0 left-0 w-64 h-24 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"></div>
+        <div className="absolute top-0 right-0 w-64 h-24 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-0 left-1/2 w-64 h-24 bg-emerald-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-4000"></div>
       </div>
 
       {/* Full-width carousel container */}
@@ -90,7 +90,7 @@ export default function Hero() {
             <div key={index} className="px-4 pb-12">
               <div className={`bg-gradient-to-br ${comp.color} rounded-3xl overflow-hidden shadow-xl transition-all duration-300 hover:shadow-2xl max-w-6xl mx-auto`}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-                  <div className="relative h-64 md:h-96 overflow-hidden order-2 md:order-1">
+                  <div className="relative h-24 md:h-96 overflow-hidden order-2 md:order-1">
                     <img 
                       src={comp.image} 
                       alt={comp.title} 
@@ -99,12 +99,12 @@ export default function Hero() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent md:from-black/0 md:via-black/30 md:to-transparent"></div>
                   </div>
-                  <div className="p-8 md:p-12 flex flex-col justify-center order-1 md:order-2">
-                    <div className="bg-white text-blue-600 p-4 rounded-lg shadow-lg w-fit mb-6">
+                  <div className="p-1 md:p-12 flex flex-col justify-center order-1 md:order-2">
+                    <div className="bg-white text-blue-600 p-1 md:p-4 rounded-lg shadow-lg w-fit mb-6">
                       {comp.icon}
                     </div>
-                    <h3 className="text-3xl font-bold text-gray-800 mb-4">{comp.title}</h3>
-                    <p className="text-gray-600 mb-8 text-lg">{comp.description}</p>
+                    <h3 className="text-xl md:text-3xl font-bold text-gray-800 mb-4">{comp.title}</h3>
+                    <p className="text-gray-600 mb-8 text-sm md:text-lg">{comp.description}</p>
                     {/* <button className="flex items-center text-white bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-medium group transition-all w-fit">
                       {comp.cta}
                       <FaArrowRight className="ml-2 transition-transform group-hover:translate-x-1" />
