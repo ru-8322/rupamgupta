@@ -44,8 +44,8 @@ const projects: Project[] = [
     liveUrl: 'https://rch.mahoba.brainpan.in/'
   },
   {
-    id: 'safai-setu',
-    title: 'Safai Setu Admin',
+    id: 'geo-hull',
+    title: 'Geo Hull',
     description: 'Geo-tracking solution to mark locations and draw convex hulls for municipal boundary mapping.',
     features: [
       'Interactive maps with Leaflet.js',
