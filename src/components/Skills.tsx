@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { FaReact, FaNodeJs, FaAws, FaDatabase, FaMobile, FaMicrosoft, FaGitAlt, FaPython } from 'react-icons/fa';
-import { SiMongodb, SiExpress, SiRedux, SiAngular, SiFlutter, SiNextdotjs, SiFirebase, SiGithubactions, SiDocker, SiTypescript, SiSpringboot } from 'react-icons/si';
+import { SiMongodb, SiExpress, SiRedux, SiAngular, SiFlutter, SiNextdotjs, SiFirebase, SiGithubactions, SiDocker, SiTypescript, SiSpringboot, SiDart } from 'react-icons/si';
 import { DiMysql } from 'react-icons/di';
 import { JSX } from 'react';
 
@@ -19,10 +19,10 @@ const skillCategories: SkillCategory[] = [
     name: 'Frontend',
     icon: <FaReact className="text-blue-500" />,
     skills: [
-      { name: 'React', level: 90, icon: <FaReact className="text-blue-500" /> },
-      { name: 'Angular', level: 85, icon: <SiAngular className="text-red-500" /> },
-      { name: 'Redux Toolkit', level: 88, icon: <SiRedux className="text-purple-500" /> },
-      { name: 'Next.js', level: 80, icon: <SiNextdotjs className="text-black dark:text-white" /> },
+      { name: 'React', level: 78, icon: <FaReact className="text-blue-500" /> },
+      { name: 'Angular', level: 90, icon: <SiAngular className="text-red-500" /> },
+      { name: 'Redux Toolkit', level: 80, icon: <SiRedux className="text-purple-500" /> },
+      { name: 'Next.js', level: 82, icon: <SiNextdotjs className="text-black dark:text-white" /> },
     ]
   },
   {
@@ -42,6 +42,7 @@ const skillCategories: SkillCategory[] = [
     skills: [
       { name: 'Flutter', level: 50, icon: <SiFlutter className="text-blue-400" /> },
       { name: 'React Native', level: 30, icon: <FaReact className="text-cyan-500" /> },
+      { name: 'Dart', level: 40, icon: <SiDart className="text-blue-500" /> },
     ]
   },
   {
@@ -49,7 +50,7 @@ const skillCategories: SkillCategory[] = [
     icon: <FaDatabase className="text-yellow-500" />,
     skills: [
       { name: 'MongoDB', level: 88, icon: <SiMongodb className="text-green-500" /> },
-      { name: 'MySQL', level: 85, icon: <DiMysql className="text-blue-600" /> },
+      { name: 'MySQL', level: 60, icon: <DiMysql className="text-blue-600" /> },
       { name: 'Firebase', level: 30, icon: <SiFirebase className="text-yellow-500" /> },
     ]
   },
@@ -67,9 +68,8 @@ const skillCategories: SkillCategory[] = [
     icon: <FaMicrosoft className="text-red-500" />,
     skills: [
       { name: 'MS Office', level: 80, icon: <FaMicrosoft className="text-red-500" /> },
-      { name: 'MS Office', level: 80, icon: <FaMicrosoft className="text-red-500" /> },
       { name: 'Git', level: 90, icon: <FaGitAlt className="text-orange-600" /> },
-      // { name: 'TypeScript', level: 88, icon: <SiTypescript className="text-blue-600" /> },
+      { name: 'TypeScript', level: 88, icon: <SiTypescript className="text-blue-600" /> },
     ]
   }
 ];

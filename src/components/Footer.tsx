@@ -4,7 +4,7 @@ import { SiUpwork, SiFiverr } from 'react-icons/si';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  
+
   const services = [
     { name: 'Web Development', href: '#skills' },
     { name: 'Mobile Apps', href: '#skills' },
@@ -39,13 +39,12 @@ export default function Footer() {
               <span className="text-2xl font-bold text-white">Gupta</span>
             </div>
             <p className="mb-6 text-gray-400">
-              Delivering high-quality software solutions with cutting-edge technologies 
-              to help businesses thrive in the digital world.
+              Building high-quality software with modern tech to help businesses grow — 4+ years of experience.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
-                <Link 
-                  key={index} 
+                <Link
+                  key={index}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -64,7 +63,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {services.map((service, index) => (
                 <li key={index}>
-                  <Link 
+                  <Link
                     href={service.href}
                     className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
                   >
@@ -81,7 +80,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <Link 
+                  <Link
                     href={link.href}
                     className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
                   >
@@ -103,7 +102,7 @@ export default function Footer() {
               &copy; {currentYear} Rupam Gupta. All rights reserved.
             </p>
           </div>
-          
+
           <div className="flex space-x-6">
             {/* <Link 
               href="/privacy-policy" 
