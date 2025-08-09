@@ -44,8 +44,8 @@ const projects: Project[] = [
     liveUrl: 'https://rch.mahoba.brainpan.in/'
   },
   {
-    id: 'geo-hull',
-    title: 'Geo Hull',
+    id: 'gis-bharat',
+    title: 'GIS Bharat',
     description: 'Geo-tracking solution to mark locations and draw convex hulls for municipal boundary mapping.',
     features: [
       'Interactive maps with Leaflet.js',
@@ -54,7 +54,7 @@ const projects: Project[] = [
       'Mobile-responsive design Admin'
     ],
     tags: ['Angular', 'Leaflet', 'Algorithms', 'Tailwind'],
-    liveUrl: 'https://gis-app.brainpan.in/'
+    liveUrl: 'https://gisbharat.com/'
   },
   {
     id: 'interactive-dashboard',
@@ -70,19 +70,32 @@ const projects: Project[] = [
     // codeUrl: '#'  
   }
   ,
+  // {
+  //   id: 'dukaan-clone',
+  //   title: 'Dukaan Clone',
+  //   description: 'E-commerce platform for small businesses with inventory management and order processing.',
+  //   features: [
+  //     'Seller dashboard',
+  //     'Product catalog management',
+  //     'Order tracking system',
+  //     'Mobile-first design'
+  //   ],
+  //   tags: ['Angular', 'Socket.io', 'Node.js', 'MongoDB', 'Express', 'Next.js'],
+  //   // liveUrl: 'https://dukaan-buddy-explore.vercel.app/'
+  // },
   {
-    id: 'dukaan-clone',
-    title: 'Dukaan Clone',
-    description: 'E-commerce platform for small businesses with inventory management and order processing.',
+    id: 'safai-setu',
+    title: 'Safai Setu',
+    description: 'Smart sanitation management platform for municipalities, integrating workforce tracking, attendance, and reporting in one system.',
     features: [
-      'Seller dashboard',
-      'Product catalog management',
-      'Order tracking system',
-      'Mobile-first design'
+      'Interactive admin panel for task assignment',
+      'Geo-tagged worker locations',
+      'Reporting dashboard',
     ],
-    tags: ['Angular', 'Socket.io', 'Node.js', 'MongoDB', 'Express', 'Next.js'],
-    // liveUrl: 'https://dukaan-buddy-explore.vercel.app/'
-  },
+    tags: ['Angular', 'Node.js', 'MongoDB', 'Express', 'TailwindCSS'],
+    // liveUrl: '' // Add production URL here when ready
+  }
+  ,
   {
     id: 'portfolio',
     title: 'Rupam Gupta Portfolio',

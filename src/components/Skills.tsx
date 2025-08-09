@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { FaReact, FaNodeJs, FaAws, FaDatabase, FaMobile, FaMicrosoft, FaGitAlt, FaPython } from 'react-icons/fa';
-import { SiMongodb, SiExpress, SiRedux, SiAngular, SiFlutter, SiNextdotjs, SiFirebase, SiGithubactions, SiDocker, SiTypescript, SiSpringboot, SiDart } from 'react-icons/si';
+import { SiMongodb, SiExpress, SiRedux, SiAngular, SiFlutter, SiNextdotjs, SiFirebase, SiGithubactions, SiDocker, SiTypescript, SiSpringboot, SiDart, SiPostman } from 'react-icons/si';
 import { DiMysql } from 'react-icons/di';
 import { JSX } from 'react';
 
@@ -33,7 +33,7 @@ const skillCategories: SkillCategory[] = [
       { name: 'Express', level: 90, icon: <SiExpress className="text-gray-800" /> },
       // { name: 'Python', level: 80, icon: <FaPython className="text-yellow-500" /> },
       { name: 'FastAPI', level: 40, icon: <FaPython className="text-teal-500" /> },
-      { name: 'Spring Boot', level: 30, icon: <SiSpringboot className="text-green-700" /> },
+      // { name: 'Spring Boot', level: 30, icon: <SiSpringboot className="text-green-700" /> },
     ]
   },
   {
@@ -69,7 +69,7 @@ const skillCategories: SkillCategory[] = [
     skills: [
       { name: 'MS Office', level: 80, icon: <FaMicrosoft className="text-red-500" /> },
       { name: 'Git', level: 90, icon: <FaGitAlt className="text-orange-600" /> },
-      { name: 'TypeScript', level: 88, icon: <SiTypescript className="text-blue-600" /> },
+      { name: 'Postman', level: 88, icon: <SiPostman className="text-orange-600" /> },
     ]
   }
 ];
@@ -156,7 +156,7 @@ export default function Skills() {
             {[
               'HTML5', 'CSS3', 'Tailwind CSS', 'JavaScript', 'TypeScript',
               'GraphQL', 'REST API', 'Vs Code', 'Postman', 'GitHub',
-              'Linux', 'Nginx', 'Bootstrap', 'Electron'
+              'Linux', 'Nginx', 'Bootstrap', 'Electron', 'Python'
             ].map((tech) => (
               <motion.div
                 key={tech}

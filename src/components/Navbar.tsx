@@ -12,9 +12,9 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
-      
+
       // Update active section based on scroll position
-      const sections = ['home', 'about', 'skills', 'projects', 'contact'];
+      const sections = ['home', 'skills', 'projects', 'about', 'contact'];
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -33,29 +33,28 @@ export default function Navbar() {
 
   const navItems = [
     { name: 'Home', id: 'home' },
-    { name: 'About', id: 'about' },
     { name: 'Skills', id: 'skills' },
     { name: 'Projects', id: 'projects' },
+    { name: 'About', id: 'about' },
     { name: 'Contact', id: 'contact' }
   ];
 
-  const handleMobileNavClick = (id:any) => {
+  const handleMobileNavClick = (id: any) => {
     setMobileMenuOpen(false);
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
     <>
-      <nav className={`fixed w-full transition-all duration-300 z-50 ${
-        scrolled 
-          ? 'bg-white shadow-md py-4' 
+      <nav className={`fixed w-full transition-all duration-300 z-50 ${scrolled
+          ? 'bg-white shadow-md py-4'
           : 'bg-white bg-opacity-90 py-6'
-      }`}>
+        }`}>
         <div className="container mx-auto px-6">
           <div className="flex justify-between items-center">
             {/* Logo */}
             <Link href="#home" className="flex items-center cursor-pointer">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
@@ -70,17 +69,16 @@ export default function Navbar() {
             <ul className="hidden md:flex space-x-8">
               {navItems.map((item) => (
                 <li key={item.id}>
-                  <Link 
+                  <Link
                     href={`#${item.id}`}
-                    className={`relative px-3 py-2 transition-colors duration-300 ${
-                      activeSection == item.id 
-                        ? 'text-blue-600 font-medium' 
+                    className={`relative px-3 py-2 transition-colors duration-300 ${activeSection == item.id
+                        ? 'text-blue-600 font-medium'
                         : 'text-gray-700 hover:text-blue-500'
-                    }`}
+                      }`}
                   >
                     {item.name}
                     {activeSection == item.id && (
-                      <motion.span 
+                      <motion.span
                         layoutId="nav-underline"
                         className="absolute left-0 bottom-0 w-full h-0.5 bg-blue-600"
                         transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
@@ -92,13 +90,13 @@ export default function Navbar() {
             </ul>
 
             {/* Desktop CTA Button */}
-            <motion.div 
+            <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="hidden md:block"
             >
-              <Link 
-                href="#contact" 
+              <Link
+                href="#contact"
                 className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md font-medium transition-colors duration-300"
               >
                 Get Started
@@ -106,7 +104,7 @@ export default function Navbar() {
             </motion.div>
 
             {/* Mobile menu button */}
-            <motion.button 
+            <motion.button
               className="md:hidden text-gray-700 focus:outline-none cursor-pointer"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               whileTap={{ scale: 0.9 }}
@@ -129,7 +127,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -138,7 +136,7 @@ export default function Navbar() {
           >
             <ul className="flex flex-col space-y-4 p-6">
               {navItems.map((item) => (
-                <motion.li 
+                <motion.li
                   key={item.id}
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -146,11 +144,10 @@ export default function Navbar() {
                 >
                   <button
                     onClick={() => handleMobileNavClick(item.id)}
-                    className={`w-full text-left px-4 py-3 rounded-md transition-colors ${
-                      activeSection === item.id
+                    className={`w-full text-left px-4 py-3 rounded-md transition-colors ${activeSection === item.id
                         ? 'bg-blue-50 text-blue-600 font-medium'
                         : 'text-gray-700 hover:bg-gray-50'
-                    }`}
+                      }`}
                   >
                     {item.name}
                   </button>

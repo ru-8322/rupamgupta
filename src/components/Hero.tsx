@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaCode, FaPaintBrush, FaServer, FaArrowRight, FaDatabase, FaMobile } from 'react-icons/fa';
+import { FaCode, FaPaintBrush, FaServer, FaArrowRight, FaDatabase, FaMobile, FaAws } from 'react-icons/fa';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
@@ -36,7 +36,16 @@ export default function Hero() {
       image: 'https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
       cta: 'See Apps',
       color: 'from-teal-500/10 to-teal-600/10'
+    },
+    {
+      icon: <FaAws className="text-4xl text-orange-500" />,
+      title: 'DevOps & AWS',
+      description: 'Implementing CI/CD pipelines, cloud infrastructure management, and scalable deployments using AWS services.',
+      image: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+      cta: 'Explore Solutions',
+      color: 'from-orange-500/10 to-yellow-500/10'
     }
+
   ];
 
   return (
@@ -91,10 +100,10 @@ export default function Hero() {
               <div className={`bg-gradient-to-br ${comp.color} rounded-3xl overflow-hidden shadow-xl transition-all duration-300 hover:shadow-2xl max-w-6xl mx-auto`}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
                   <div className="relative h-24 md:h-96 overflow-hidden order-2 md:order-1">
-                    <img 
-                      src={comp.image} 
-                      alt={comp.title} 
-                      className="w-full h-full object-cover transform hover:scale-105 transition duration-700" 
+                    <img
+                      src={comp.image}
+                      alt={comp.title}
+                      className="w-full h-full object-cover transform hover:scale-105 transition duration-700"
                       loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent md:from-black/0 md:via-black/30 md:to-transparent"></div>
