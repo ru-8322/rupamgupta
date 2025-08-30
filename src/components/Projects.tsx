@@ -94,8 +94,47 @@ const projects: Project[] = [
     ],
     tags: ['Angular', 'Node.js', 'MongoDB', 'Express', 'TailwindCSS'],
     // liveUrl: '' // Add production URL here when ready
+  },
+  {
+    id: 'ayush-app',
+    title: 'Ayush App',
+    description: 'Healthcare management app built with Flutter for patient registration, attendance tracking, and health monitoring.',
+    features: [
+      'Mark attendance with photo upload',
+      'Add new patients with details',
+      'View and manage patient list',
+      'Interactive dashboard for doctors and staff',
+    ],
+    tags: ['Flutter', 'Node.js', 'Express', 'MongoDB'],
+    // liveUrl: '' // Add production URL here when ready
+  },
+  {
+    id: 'kitesuite',
+    title: 'KiteSuite PMS Tool',
+    description: 'Project Management System to streamline team collaboration, task tracking, and resource management for enterprises.',
+    features: [
+      'Project & task lifecycle management',
+      'Team collaboration with role-based access',
+      'Real-time progress tracking dashboard',
+      'Reports & analytics for managers',
+    ],
+    tags: ['Angular', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'TailwindCSS'],
+    liveUrl: 'https://kitesuite.com/'
   }
+
   ,
+  {
+    id: 'wind-farm',
+    title: 'Wind Farm',
+    description: 'Smart wind energy management platform with real-time turbine monitoring, energy analytics, and sensor-driven insights.',
+    features: [
+      'Energy production and consumption dashboard',
+      'Sensor data integration',
+      'Interactive admin and analytics dashboard',
+    ],
+    tags: ['Angular', 'Node.js', 'Express', 'MongoDB', 'IoT', 'TailwindCSS'],
+    liveUrl: 'https://windfarm.brainpan.in/'
+  },
   {
     id: 'portfolio',
     title: 'Rupam Gupta Portfolio',

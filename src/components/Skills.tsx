@@ -41,7 +41,7 @@ const skillCategories: SkillCategory[] = [
     icon: <FaMobile className="text-blue-400" />,
     skills: [
       { name: 'Flutter', level: 50, icon: <SiFlutter className="text-blue-400" /> },
-      { name: 'React Native', level: 30, icon: <FaReact className="text-cyan-500" /> },
+      // { name: 'React Native', level: 30, icon: <FaReact className="text-cyan-500" /> },
       { name: 'Dart', level: 40, icon: <SiDart className="text-blue-500" /> },
     ]
   },
@@ -59,7 +59,7 @@ const skillCategories: SkillCategory[] = [
     icon: <FaAws className="text-orange-500" />,
     skills: [
       { name: 'AWS', level: 60, icon: <FaAws className="text-orange-500" /> },
-      { name: 'Docker', level: 10, icon: <SiDocker className="text-blue-500" /> },
+      // { name: 'Docker', level: 10, icon: <SiDocker className="text-blue-500" /> },
       { name: 'CI/CD', level: 20, icon: <SiGithubactions className="text-purple-500" /> },
     ]
   },
