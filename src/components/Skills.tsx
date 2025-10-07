@@ -30,7 +30,7 @@ const skillCategories: SkillCategory[] = [
     icon: <FaNodeJs className="text-green-600" />,
     skills: [
       { name: 'Node.js', level: 92, icon: <FaNodeJs className="text-green-600" /> },
-      { name: 'Express', level: 90, icon: <SiExpress className="text-gray-800" /> },
+      { name: 'Express', level: 90, icon: <SiExpress className="text-gray-800 dark:text-gray-200" /> },
       // { name: 'Python', level: 80, icon: <FaPython className="text-yellow-500" /> },
       { name: 'FastAPI', level: 40, icon: <FaPython className="text-teal-500" /> },
       // { name: 'Spring Boot', level: 30, icon: <SiSpringboot className="text-green-700" /> },

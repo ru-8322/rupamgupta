@@ -24,14 +24,11 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
     setTimeout(() => {
       console.log('Form submitted:', formData);
       setIsSubmitting(false);
       setSubmitSuccess(true);
       setFormData({ name: '', email: '', message: '' });
-
-      // Reset success message after 5 seconds
       setTimeout(() => setSubmitSuccess(false), 5000);
     }, 1500);
   };
@@ -65,9 +62,9 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-12 md:py-20 bg-gray-50">
+    <section id="contact" className="py-12 md:py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
       <div className="container mx-auto px-4 sm:px-6">
-        {/* Section Header */}
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -75,15 +72,16 @@ export default function Contact() {
           viewport={{ once: true }}
           className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-3 sm:mb-4">Get In Touch</h2>
-          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
-            Have a project in mind or want to discuss potential opportunities?
-            Feel free to reach out through any of these channels.
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 dark:text-white mb-3 sm:mb-4">
+            Get In Touch
+          </h2>
+          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            Have a project in mind or want to discuss potential opportunities? Feel free to reach out through any of these channels.
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
-          {/* Contact Information */}
+          {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -93,14 +91,16 @@ export default function Contact() {
             <div className="space-y-6 md:space-y-8">
               {contactMethods.map((method, index) => (
                 <div key={index} className="flex items-start gap-4 sm:gap-6">
-                  <div className="flex-shrink-0 p-2 sm:p-3 bg-white rounded-lg shadow-md">
+                  <div className="flex-shrink-0 p-2 sm:p-3 bg-white dark:bg-gray-800 rounded-lg shadow-md">
                     {method.icon}
                   </div>
                   <div>
-                    <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-1">{method.title}</h3>
+                    <h3 className="text-lg sm:text-xl font-semibold text-gray-800 dark:text-gray-100 mb-1">
+                      {method.title}
+                    </h3>
                     <a
                       href={method.action}
-                      className="text-sm sm:text-base text-gray-600 hover:text-blue-500 transition-colors"
+                      className="text-sm sm:text-base text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -112,7 +112,7 @@ export default function Contact() {
 
               {/* Social Links */}
               <div className="pt-4 md:pt-6">
-                <h4 className="text-base sm:text-lg font-medium text-gray-800 mb-3 sm:mb-4">Follow Me</h4>
+                <h4 className="text-base sm:text-lg font-medium text-gray-800 dark:text-gray-100 mb-3 sm:mb-4">Follow Me</h4>
                 <div className="flex gap-3 sm:gap-4">
                   {socialLinks.map((social, index) => (
                     <a
@@ -120,8 +120,8 @@ export default function Contact() {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 sm:p-3 bg-white rounded-lg shadow-md hover:bg-blue-50 transition-colors"
-                      aria-label={`${social.icon.type.displayName} profile`}
+                      className="p-2 sm:p-3 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:bg-blue-50 dark:hover:bg-gray-700 transition-colors"
+                      aria-label="social link"
                     >
                       {social.icon}
                     </a>
@@ -137,12 +137,12 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
-            className="bg-white p-6 sm:p-8 rounded-xl shadow-lg"
+            className="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-xl shadow-lg"
           >
-            <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-4 sm:mb-6">Send a Message</h3>
+            <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-white mb-4 sm:mb-6">Send a Message</h3>
 
             {submitSuccess && (
-              <div className="mb-4 sm:mb-6 p-3 sm:p-4 bg-green-50 text-sm sm:text-base text-green-700 rounded-lg">
+              <div className="mb-4 sm:mb-6 p-3 sm:p-4 bg-green-50 dark:bg-green-900/40 text-sm sm:text-base text-green-700 dark:text-green-300 rounded-lg">
                 Thank you! Your message has been sent successfully. I'll get back to you soon.
               </div>
             )}
@@ -150,7 +150,7 @@ export default function Contact() {
             <form onSubmit={handleSubmit}>
               <div className="space-y-4 sm:space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                     Your Name
                   </label>
                   <input
@@ -160,13 +160,13 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
                     placeholder="John Doe"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                     Email Address
                   </label>
                   <input
@@ -176,13 +176,13 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
                     placeholder="your@email.com"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                     Your Message
                   </label>
                   <textarea
@@ -192,7 +192,7 @@ export default function Contact() {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
                     placeholder="Tell me about your project..."
                   ></textarea>
                 </div>
@@ -201,17 +201,12 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`w-full flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base rounded-lg text-white font-medium cursor-pointer ${isSubmitting ? 'bg-blue-400' : 'bg-blue-600 hover:bg-blue-700'
-                      } transition-colors`}
+                    className={`w-full flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base rounded-lg text-white font-medium cursor-pointer transition-colors ${isSubmitting
+                        ? 'bg-blue-400 dark:bg-blue-500'
+                        : 'bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600'
+                      }`}
                   >
-                    {isSubmitting ? (
-                      'Sending...'
-                    ) : (
-                      <>
-                        <FiSend className="mr-2" />
-                        Send Message
-                      </>
-                    )}
+                    {isSubmitting ? 'Sending...' : (<><FiSend className="mr-2" /> Send Message</>)}
                   </button>
                 </div>
               </div>

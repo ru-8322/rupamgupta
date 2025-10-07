@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
-import { SiUpwork, SiFiverr } from 'react-icons/si';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -24,8 +23,6 @@ export default function Footer() {
     { icon: <FaLinkedin className="text-xl" />, href: 'https://linkedin.com/in/mr-rupam-gupta' },
     { icon: <FaTwitter className="text-xl" />, href: 'https://twitter.com/mrrupamgupta' },
     { icon: <FaEnvelope className="text-xl" />, href: 'mailto:guptarupam@gmail.com' },
-    // { icon: <SiUpwork className="text-xl" />, href: 'https://upwork.com/freelancers/yourprofile' },
-    // { icon: <SiFiverr className="text-xl" />, href: 'https://fiverr.com/yourprofile' },
   ];
 
   return (
@@ -38,9 +35,12 @@ export default function Footer() {
               <span className="text-2xl font-bold text-blue-400">Rupam</span>
               <span className="text-2xl font-bold text-white">Gupta</span>
             </div>
-            <p className="mb-6 text-gray-400">
-              Building high-quality software with modern tech to help businesses grow — 4+ years of experience.
+            <p className="mb-6 text-gray-400 dark:text-gray-400">
+              Building high-quality, scalable, and user-focused software with modern technologies —
+              over 3 years of experience delivering impactful web, mobile, and cloud-based solutions
+              that help businesses grow and innovate.
             </p>
+
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
                 <Link

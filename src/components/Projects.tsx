@@ -276,28 +276,35 @@ export default function Projects() {
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mt-16"
+          className="text-center mt-16 transition-colors duration-500"
         >
-          <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
+          <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
             Want to see more? Check out my GitHub or contact me for details.
           </p>
+
           <div className="flex justify-center space-x-4">
+            {/* GitHub Button */}
             <a
               href="https://github.com/programmingyatra"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 bg-gray-800 hover:bg-gray-900 text-white rounded-lg shadow transition-colors flex items-center"
+              className="px-6 py-3 bg-gray-800 hover:bg-gray-900 text-white dark:bg-gray-200 dark:text-gray-900 dark:hover:bg-gray-300 rounded-lg shadow transition-all duration-300 flex items-center font-medium"
             >
               View GitHub
             </a>
+
+            {/* Contact Button */}
             <a
               href="#contact"
-              className="px-6 py-3 border-2 border-gray-800 text-gray-800 dark:border-white dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors"
+              className="px-6 py-3 border-2 border-gray-800 text-gray-800 hover:bg-gray-100 
+                 dark:border-gray-200 dark:text-gray-200 dark:hover:bg-gray-700 
+                 rounded-lg font-medium transition-all duration-300"
             >
               Contact Me
             </a>
           </div>
         </motion.div>
+
       </div>
     </section>
   );
